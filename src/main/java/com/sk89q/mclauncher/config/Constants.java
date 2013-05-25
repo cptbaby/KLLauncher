@@ -40,7 +40,7 @@ public class Constants {
     public static final boolean VERIFY_CUSTOM_DOWNLOADS = false;
     public static final URL NEWS_URL;
         
-    private static final String NEWS_URL_BASE = "http://minecraft.update.sk89q.com/updates/?v=%version%";
+    private static final String NEWS_URL_BASE = "http://feed-the-kebab.tk/news/news.php";
     
     static {
         try {
@@ -68,8 +68,9 @@ public class Constants {
      *            configurations manager
      */
     public static void register(ConfigurationsManager configsManager) {
-        configsManager.setDefault(configsManager.registerBuiltIn("minecraft",
-                "Default", null, null));
+        configsManager.setDefault(configsManager.registerBuiltIn("minecraft", "Minecraft Vanilla", null, null));
+        configsManager.registerBuiltIn("feedthekebab", "Feef The Kebab", "ftk", "https://dl.dropboxusercontent.com/u/34875451/ftk/ftk.xml").loadIcon("/resources/kebab-land/ftk_icon.png");
+        configsManager.registerBuiltIn("xenmanpit", "XenManPit", "xmp", "https://dl.dropboxusercontent.com/u/34875451/xmp/xmp.xml").loadIcon("/resources/kebab-land/xmp_icon.png");
     }
 
     /**
