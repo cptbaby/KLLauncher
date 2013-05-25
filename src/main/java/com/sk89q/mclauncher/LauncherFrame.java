@@ -105,7 +105,7 @@ public class LauncherFrame extends JFrame {
      * Construct the launcher.
      */
     public LauncherFrame() {
-        setTitle("SK's Minecraft Launcher");
+        setTitle("Kebab's Land Minecraft Launcher");
         setSize(620, 500);
         
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -406,7 +406,7 @@ public class LauncherFrame extends JFrame {
 
         JPanel buttonsPanel = new JPanel();
         buttonsPanel.setLayout(new GridLayout(1, 3, 3, 0));
-        playBtn = new JButton("Play");
+        playBtn = new JButton("Jouer");
         final JButton optionsBtn = new JButton("Options...");
         JButton addonsBtn = new JButton("Addons...");
         buttonsPanel.add(playBtn);
@@ -509,9 +509,9 @@ public class LauncherFrame extends JFrame {
         GridBagLayout layout = new GridBagLayout();
         panel.setLayout(layout);
 
-        final JLabel jarLabel = new JLabel("Active JAR:", SwingConstants.LEFT);
-        JLabel userLabel = new JLabel("Username:", SwingConstants.LEFT);
-        JLabel passLabel = new JLabel("Password:", SwingConstants.LEFT);
+        final JLabel jarLabel = new JLabel("Selection du JAR:", SwingConstants.LEFT);
+        JLabel userLabel = new JLabel("Pseudo/Email:", SwingConstants.LEFT);
+        JLabel passLabel = new JLabel("Mot de passe:", SwingConstants.LEFT);
 
         jarCombo = new JComboBox();
         userText = new JComboBox();
@@ -524,16 +524,16 @@ public class LauncherFrame extends JFrame {
         layout.setConstraints(userText, fieldC);
         layout.setConstraints(passText, fieldC);
 
-        rememberPass = new JCheckBox("Remember my password");
+        rememberPass = new JCheckBox("Se souvenir de mon mot de passe");
         rememberPass.setBorder(null);
 
         autoConnectCheck = new JCheckBox("Auto-connect");
         autoConnectCheck.setBorder(null);
 
-        forceUpdateCheck = new JCheckBox("Force a game update");
+        forceUpdateCheck = new JCheckBox("Focer la mise a jour");
         forceUpdateCheck.setBorder(null);
 
-        playOfflineCheck = new JCheckBox("Play in offline mode");
+        playOfflineCheck = new JCheckBox("Jouer en mode hors ligne");
         playOfflineCheck.setBorder(null);
         playOfflineCheck.addActionListener(new ActionListener() {
             @Override
@@ -545,10 +545,10 @@ public class LauncherFrame extends JFrame {
             }
         });
 
-        showConsoleCheck = new JCheckBox("Launch with console");
+        showConsoleCheck = new JCheckBox("Lancer dans la console");
         showConsoleCheck.setBorder(null);
 
-        expandBtn = new LinkButton("More options...");
+        expandBtn = new LinkButton("Plus d'options...");
         final JPanel expandContainer = new JPanel();
         expandContainer.setLayout(new BoxLayout(expandContainer,
                 BoxLayout.X_AXIS));
