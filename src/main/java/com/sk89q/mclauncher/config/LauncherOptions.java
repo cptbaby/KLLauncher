@@ -124,6 +124,14 @@ public class LauncherOptions {
         return serverHotList;
     }
     
+    
+    private string s = "Couldn't recive informations !"
+    
+    try {
+                defaultSettings.read(in);
+            } catch (IOException e) {
+                logger.log(Level.WARNING, s, e);
+            }
     /**
      * Get a list of saved usernames.
      * 
