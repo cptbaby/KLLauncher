@@ -300,14 +300,14 @@ public class OptionsDialog extends JDialog {
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
         JLabel label;
-        label = new JLabel("Kebab's Land Minecraft Launcher");
+        label = new JLabel("SK's Minecraft Launcher");
         label.setAlignmentX(Component.LEFT_ALIGNMENT);
         panel.add(label);
         label = new JLabel("Version " + Launcher.VERSION);
         label.setAlignmentX(Component.LEFT_ALIGNMENT);
         panel.add(label);
 
-        LinkButton btn = new LinkButton("http://www.kebab-land.eu");
+        LinkButton btn = new LinkButton("http://www.sk89q.com");
         btn.setAlignmentX(Component.LEFT_ALIGNMENT);
         panel.add(btn);
 
@@ -332,7 +332,7 @@ public class OptionsDialog extends JDialog {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                UIUtil.openURL("http://www.kebab-land.eu", self);
+                UIUtil.openURL("http://www.sk89q.com", self);
             }
         });
         

@@ -108,12 +108,12 @@ public class Launcher {
     private Launcher() {
         instance = this;
         
-        System.setProperty("http.agent", "KLLauncher/" + VERSION + " (+http://www.kebab-land.eu)");
+        System.setProperty("http.agent", "SKMCLauncher/" + VERSION + " (+http://www.sk89q.com)");
         
         // Read options
         File base = getLauncherDataDir();
         base.mkdirs();
-        File optionsFile = new File(base, "kebab-land.xml");
+        File optionsFile = new File(base, "config.xml");
         options = new LauncherOptions(optionsFile);
         options.load();
         
@@ -285,7 +285,7 @@ public class Launcher {
      */
     public static File getLauncherDataDir() {
         String homeDir = System.getProperty("user.home", ".");
-        File workingDir = new File(".", "kebab-land.xml");
+        File workingDir = new File(".", "config.xml");
         if (workingDir.exists()) {
             return new File(".");
         }
@@ -293,24 +293,24 @@ public class Launcher {
         switch (getPlatform()) {
             case LINUX:
             case SOLARIS:
-                workingDir = new File(homeDir, ".kllauncher");
+                workingDir = new File(homeDir, ".skmclauncher");
                 break;
             case WINDOWS:
                 String applicationData = System.getenv("APPDATA");
                 if (applicationData != null) {
-                    workingDir = new File(applicationData, "kllauncher");
+                    workingDir = new File(applicationData, "SKMCLauncher");
                 } else {
-                    workingDir = new File(homeDir, "kllauncher");
+                    workingDir = new File(homeDir, "SKMCLauncher");
                 }
                 break;
             case MAC_OS_X:
                 workingDir = new File(homeDir,
-                        "Library/Application Support/kllauncher");
+                        "Library/Application Support/SKMCLauncher");
                 break;
             default:
-                workingDir = new File(homeDir, "kllauncher");
+                workingDir = new File(homeDir, "SKMCLauncher");
         }
-        if (!new File(workingDir, "kebab-land.xml").exists()) {
+        if (!new File(workingDir, "config.xml").exists()) {
             workingDir = getOfficialDataDir();
         }
         if (!workingDir.exists() && !workingDir.mkdirs()) {
